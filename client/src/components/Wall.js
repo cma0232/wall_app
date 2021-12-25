@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 export default function Wall(props) {
     const message = props.message
 
-
-
-    console.log(message)
-
     return (
         <div>
-            <div>
+            <table className='table'>
+                <thead>
+                    <tr className='lead font-weight-bolder'>WALL</tr>
+                </thead>
+                <tbody>
+                    
                 {message ?
                     message.map(e => {
                         return (
-                            <div key={e.id}>
+                            <tr>
+                            <td key={e.id}>
                                 {e.message}
-                            </div>
+                            </td></tr>
                         )
                     })
                     : null}
-            </div>
+                    
+                </tbody>
+            </table>
         </div>
     )
 }

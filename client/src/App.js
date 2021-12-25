@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './components/Login';
@@ -6,7 +5,6 @@ import Wall from './components/Wall';
 
 function App() {
   const [message, setMessage] = useState('');
-
   const refreshPost = () => {
     getJSON();
   }
@@ -20,7 +18,6 @@ function App() {
       })
       .then(data => {
         setMessage(data);
-
       }
       )
       .catch(error => console.error(error))

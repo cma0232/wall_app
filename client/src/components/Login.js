@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Wall from './Wall'
 
 class Login extends Component {
     state = {
@@ -30,7 +29,6 @@ class Login extends Component {
             .then(
                 data => {
                     console.log(data.token)
-                    //this.props.postMessage(data.token);
                 }
             )
             .catch(error => console.error(error))
@@ -55,11 +53,9 @@ class Login extends Component {
             .then(
                 data => {
                     console.log(data);
-
                 }
             )
             .catch(error => {
-
                 this.setState({ errorMessage: error });
             })
     }
@@ -74,7 +70,6 @@ class Login extends Component {
             .then(data => data.json())
             .then(data => { console.log(data) })
             .catch(error => console.error(error))
-
     }
 
     inputChanged = event => {
@@ -84,23 +79,22 @@ class Login extends Component {
     }
 
     inputMessage = event => {
-
         this.setState({ [event.target.name]: event.target.value })
         console.log(this.state.message)
     }
 
 
-
     render() {
         let status;
         if (this.state.errorMessage) {
-            status = <h3 className="error">Something went wrong, please try again.</h3>
+            status = <h3>Something went wrong, please try again.</h3>
         } else if (this.state.successMessage) {
-            status = <div><h3>Login in successfully!</h3>
-                <textarea onChange={this.inputMessage}
+            status = <div className='form-group m-5'><h3>Login in successfully!</h3>
+                <textarea className='form-control ' rows="4"
+                    onChange={this.inputMessage}
                     name='message'
                     value={this.state.message}></textarea>
-                <button onClick={() => {
+                <button className="btn btn-primary m-3" onClick={() => {
                     this.postMessage()
                         .then(e => {
                             this.props.refreshPost()
@@ -109,36 +103,35 @@ class Login extends Component {
         }
         return (
             <div>
-            
+            <div className='m-5'>
                 <h1>Login user form</h1>
-                <form>
-                <div className='form-group'>
+                <div className='form-group ml-5 mr-5'>
                 <label >Username: </label>
                 <input type="text" name="username"
+                        className="form-control "
                         value={this.state.credentials.username}
                         onChange={this.inputChanged} />
-                
                 </div>
-                <div className='form-group'>
+                <div className='form-group ml-5 mr-5'>
                 <label>Email:</label>
-                <input type="text" name="email"
+                <input type="email" name="email"
+                        className="form-control" 
                         value={this.state.credentials.email}
                         onChange={this.inputChanged} />
                 </div>
-                <div className='form-group'>
+                <div className='form-group ml-5 mr-5'>
                 <label>Password:</label>
-                    <input type="password" name="password"
+                <input type="password" name="password"
+                        className="form-control"
                         value={this.state.credentials.password}
                         onChange={this.inputChanged} />
                 </div>
-                </form>
-                <button onClick={this.login}>Login</button>
-                <button onClick={this.register}>Register</button>
-                {status}
-
-                { }
+                
+                <button className="btn btn-primary m-5" onClick={this.login}>Login</button>
+                <button className="btn btn-primary m-5" onClick={this.register}>Register</button>
+                </div>
+                <div className='container'>{status}</div>
             </div>
-            
         )
     }
 }
