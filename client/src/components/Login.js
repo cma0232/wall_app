@@ -9,8 +9,7 @@ class Login extends Component {
     }
 
     login = () => {
-        console.log(typeof (this.state.credentials))
-        console.log(process.env.REACT_APP_API_URL)
+
         this.setState({ successMessage: null })
         this.setState({ errorMessage: null });
         console.log(this.state.credentials)
@@ -81,7 +80,7 @@ class Login extends Component {
 
     inputMessage = event => {
         this.setState({ [event.target.name]: event.target.value })
-        console.log(this.state.message)
+        
     }
 
 

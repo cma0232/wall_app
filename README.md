@@ -23,7 +23,9 @@
     The backend will be available at http://localhost:8000
 
 4. Run frontend. Navigate to ```/client``` directory:  
-  
+    
+    ```npm install```  
+
     ```npm start```  
 
     The frontend will be available at http://localhost:3000  

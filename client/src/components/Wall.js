@@ -5,22 +5,17 @@ export default function Wall(props) {
 
     return (
         <div>
-            <table className='table'>
-                <thead>
-                    <tr className='lead font-weight-bolder'>WALL</tr>
-                </thead>
-                <tbody>
-                    
+            
+                <h3 className='lead font-weight-bolder'>WALL</h3>
+
                 {message ?
                     message.map(e => {
                         return (
-                            <tr key={e.id}><td >{e.message}</td></tr>
+                            <div key={e.id}>{e.message}<hr className="mt-2 mb-3" /></div>
                         )
                     })
                     : null}
-                    
-                </tbody>
-            </table>
+
         </div>
     )
 }
