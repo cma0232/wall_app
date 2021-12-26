@@ -1,7 +1,7 @@
 # Wall APP
 ## Built With
--React
--Django
+*React
+*Django
 
 
 ## Getting Started
