@@ -103,14 +103,15 @@ class Login extends Component {
         }
         return (
             <div>
-            <div className='m-5'>
-                <h1>Login user form</h1>
+            <div className='m-5 was-validated'>
+                <h1>Login Form</h1>
                 <div className='form-group ml-5 mr-5'>
                 <label >Username: </label>
                 <input type="text" name="username"
                         className="form-control "
                         value={this.state.credentials.username}
                         onChange={this.inputChanged} />
+                
                 </div>
                 <div className='form-group ml-5 mr-5'>
                 <label>Email:</label>
