@@ -35,7 +35,7 @@
 ### Test
 Navigate to ```/server/wall_app``` directory:  
   
-    ```python manage.py test```  
+  ```python manage.py test```  
   
   There are 7 test cases. You can find more details in ```/server/wall_app/api/test/``` folder.
 
