@@ -10,5 +10,9 @@
 - Python3
 
 ### Running the Project Locally
-First, clone the repository to your local machine:
-```git clone```
+1. Clone the repository to your local machine.
+2. ```cd server```. Then activate virtual environments by run
+```$ source venv/bin/activate```
+3. run backend. Navigate to ```server/wall_app```:
+```$ python manage.py runserver```
+
