@@ -10,10 +10,11 @@ class Login extends Component {
 
     login = () => {
         console.log(typeof (this.state.credentials))
+        console.log(process.env.REACT_APP_API_URL)
         this.setState({ successMessage: null })
         this.setState({ errorMessage: null });
         console.log(this.state.credentials)
-        fetch('http://localhost:8000/auth/', {
+        fetch(`${process.env.REACT_APP_API_URL}/auth/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(this.state.credentials)
@@ -38,7 +39,7 @@ class Login extends Component {
         this.setState({ errorMessage: null });
         this.setState({ successMessage: null })
         console.log(this.state.credentials)
-        fetch('http://localhost:8000/api/users/', {
+        fetch(`${process.env.REACT_APP_API_URL}/api/users/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(this.state.credentials)
@@ -61,7 +62,7 @@ class Login extends Component {
     }
 
     postMessage = () => {
-        return fetch('http://localhost:8000/api/wall/', {
+        return fetch(`${process.env.REACT_APP_API_URL}/api/wall/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             //Authorization: `Token ${this.props.token}`,

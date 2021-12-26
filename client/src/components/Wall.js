@@ -14,10 +14,7 @@ export default function Wall(props) {
                 {message ?
                     message.map(e => {
                         return (
-                            <tr>
-                            <td key={e.id}>
-                                {e.message}
-                            </td></tr>
+                            <tr key={e.id}><td >{e.message}</td></tr>
                         )
                     })
                     : null}

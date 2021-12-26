@@ -43,6 +43,16 @@ class TestViews(TestSetUp):
         response = client.post('/auth/', self.userData)
         assert response.status_code, 200 
         
+    # test user can login without email after register(username and password is required)
+    def test_login_without_email(self):
+        client = Client()
+        # register
+        client.post('/api/users/', self.userData)
+        # login
+        response = client.post(
+            '/auth/', {'username': 'test_um', 'email': '', 'password': 'test'})
+        assert response.status_code, 200
+
     # test user can post message after login
     def test_post_message(self):
         client = Client()
